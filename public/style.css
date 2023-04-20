@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* Custom Properties */
+
+:root {
+    --clr-primary-300: hsl(0, 0%, 59%);
+    --clr-primary-400: hsl(0, 0%, 17%);
+
+    --fs-body: 18px;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    --ff-primary: 'Rubik', sans-serif;
+}
+
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+img,
+svg {
+    display: block;
+    width: 100%;
+}
+
+/* General Styling */
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    z-index: 1;
+}
+
+/* Background */
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+#map {
+    /* background-color: red; */
+    position: relative;
+    min-height: calc(100vh - 260px);
+}
+
+/* IP Address Section */
+
+.ip-address-section {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.ip-address-section h1 {
+    color: #fff;
+    font-weight: var(--fw-medium);
+    font-size: 2rem;
+}
+
+.ip-address-section form {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    width: min(550px, 85vw);
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ip-address-section input {
+    grid-column: span 16;
+    padding: 1.2rem 1.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: none;
+    font-size: var(--fs-body);
+}
+
+.ip-address-section button {
+    cursor: pointer;
+    border: none;
+    grid-column: span 2;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: #fff;
+    background-color: #000;
+    transition: background 0.2s ease-out;
+    font-size: 1.5rem;
+}
+.ip-address-section button:hover,
+.ip-address-section button:focus {
+    background-color: var(--clr-primary-400);
+}
+
+.ip-address-section input:focus {
+    outline: none;
+}
+
+@media (max-width: 50em) {
+    .ip-address-section input {
+        grid-column: span 15;
+    }
+
+    .ip-address-section button {
+        grid-column: span 3;
+    }
+}
+
+/* Details Section */
+
+.details-section {
+    background-color: #fff;
+    display: flex;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    max-width: 90vw;
+}
+
+.detail-heading {
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    color: var(--clr-primary-300);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.detail-info {
+    font-size: 1.875rem;
+    font-weight: var(--fw-medium);
+    color: var(--clr-primary-400);
+    margin-top: 0.5rem;
+}
+
+.partition {
+    width: 1px;
+    border-left: 1px solid rgb(228, 228, 228);
+    height: 80px;
+}
+
+@media (min-width: 50em) {
+    .detail {
+        width: 225px;
+    }
+}
+
+@media (max-width: 50em) {
+    .details-section {
+        flex-direction: column;
+        width: 85vw;
+    }
+
+    .partition {
+        display: none;
+    }
+
+    .detail {
+        text-align: center;
+    }
+
+    .detail-heading {
+        font-size: 13px;
+    }
+    .detail-info {
+        font-size: 1.25rem;
+    }
+}
